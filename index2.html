@@ -10,12 +10,15 @@
     <header id="head-box">
         <nav class="navbar container">
             <h1 id="main-title">My Test DOM</h1>
+            <form action="">
+                <input type="search" id="filter" placeholder="Search">
+            </form>
         </nav>
     </header>
     <section>
         <div class="sec-1 container">
             <h2 id="sec-title">Add items</h2>
-            <form action="">
+            <form id="form-input">
                 <input type="text" id="name">
                 <select class="sel">
                     <option value="1">1</option>
@@ -26,21 +29,21 @@
             </form>
         </div>
         <div class="list-items container">
-            <h2 class="li-title">Items</h2>
+            <h2 id="li-title">Items</h2>
             <ul class="list-group" id="items">
-                <li class="list-item">Item1</li>
-                <li class="list-item">Item2</li>
-                <li class="list-item">Item3</li>
-                <li class="list-item">Item4</li>
+                <li class="list-item">Item1<button class="btn-x">X</button></li>
+                <li class="list-item">Item2<button class="btn-x">X</button></li>
+                <li class="list-item">Item3<button class="btn-x">X</button></li>
+                <li class="list-item">Item4<button class="btn-x">X</button></li>
             </ul>
             <div id="output"></div>
             <button class="btn btn-dark" id="button">Click Here!</button>
             <div id="box1">
-                <h2>hello</h2>
+                <h2></h2>
             </div>
         </div>
     </section>
-    <script src="dom.js"></script>
+    <script src="dom2.js"></script>
 </body>
 
 </html>
