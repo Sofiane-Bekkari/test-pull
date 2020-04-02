@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop</title>
+</head>
+
+<body>^
+    <h1>Looping Exercise</h1>
+    <p>We are using a loop for filter some lists of name of pepole</p>
+    <h3 style="display: inline-block;">Admited:</h3><span class="admitted"></span><br>
+    <h3 style="display: inline-block;">Refused:</h3><span class="refused"></span>
+
+    <script>
+        const people = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
+
+        const admitted = document.querySelector('.admitted');
+        console.log(admitted);
+        const refused = document.querySelector('.refused');
+        admitted.textContent = ' Admit: ';
+        refused.textContent = ' Refuse: ';
+
+        let i = 0;
+        for (i = 0; i < people.length; i++) {
+            let newPeople = people[i];
+
+            console.log(newPeople);
+            if (newPeople === 'Phil' || newPeople === 'Lola') {
+                refused.textContent += newPeople + ', Met! ';
+                console.log(newPeople, 'Here when met!');
+            } else {
+                admitted.textContent += newPeople + ', ';
+            }
+            console.log(i)
+        }
+    </script>
+</body>
+
+</html>

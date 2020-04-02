@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript</title>
+</head>
+
+<body>
+    <h1>Learning JavaScript</h1>
+    <hr>
+    <h2>First Exercise </h2>
+    <ul class="output">
+    </ul>
+
+    <a href="beach-maldive.jpg" download="mypic.jpg">
+        <img src="beach-maldive.jpg" width="150px" alt="image">
+    </a>
+    <p>Download it:</p>
+
+    <h2>Second Exercise </h2>
+    <ul class="output1">
+
+    </ul>
+    <h2>Third Exercise </h2>
+    <ul class="output2">
+
+    </ul>
+
+    <h2>Fourth Exercise</h2>
+    <section id="par">
+    </section>
+
+    <h2>Fifth Exercise</h2>
+    <section id="par1">
+
+        <a href="beach-maldive.jpg" download="mypic.jpg">
+            <img src="beach-maldive.jpg" alt="image">
+        </a>
+    </section>
+
+    <h2>sixth Exercise</h2>
+    <section id="par2">
+    </section>
+    <script>
+
+        // FIRST EXERCISE
+
+        // Create Variable
+        let listItems = document.querySelector('.output');
+        // Create a array
+        let greetings = ['Happy Birthday!',
+            'Merry Christmas my love',
+            'A happy Christmas to all the family',
+            'You\'re all I want for Christmas',
+            'Get well soon'];
+
+        // Loop through array
+        for (let i = 0; i < greetings.length; i++) {
+            // Variable that containe what looping into
+            let input = greetings[i];
+
+            // Filtring Special word
+            if (greetings[i].indexOf('Christmas') !== -1) {
+
+                // Creating new tag inside UL   
+                let filter = input;
+                // console.log(filter, '= True!');
+                // Creating new tag <li>!   
+                let lists = document.createElement('li');
+                // Add filter special word
+                lists.textContent = filter;
+                //console.log('Is work!');
+                // Add it to <ul> listitems
+                listItems.appendChild(lists);
+            }
+        }
+
+        // SECOND EXERCISE
+
+        const list = document.querySelector('.output1');
+        console.log(list);
+        list.innerHTML = '';
+        let cities = ['lonDon', 'ManCHESTer', 'BiRmiNGHAM', 'liVERpoOL'];
+
+        for (let i = 0; i < cities.length; i++) {
+            let input1 = cities[i];
+
+            // Create a variable to lowercase all string word
+            let lowerCase = input1.toLowerCase();
+            // Slicing First letter in each string word
+            let cutFirstLetter = lowerCase.slice(1);
+            // Slicing First letter and stored in separat varaible
+            let firstLetter = input1.slice(0, 1);
+            // Convert our First letter to Uppercase 
+            let upperLetter = firstLetter.toUpperCase();
+            // Last is to concatnation between First Upper letter & the rest of the word
+            let finalWord = upperLetter + cutFirstLetter;
+
+            // Result Vaariable present the FINALWORD variable
+
+            let result = finalWord;
+            let listItem = document.createElement('li');
+            listItem.textContent = result;
+            list.appendChild(listItem);
+        }
+
+        // THIRD EXERCISE
+
+        const list3 = document.querySelector('.output2');
+        list3.innerHTML = '';
+        console.log(list3)
+        let stations = ['MAN675847583748sjt567654;Manchester Piccadilly',
+            'GNF576746573fhdg4737dh4;Greenfield',
+            'LIV5hg65hd737456236dch46dg4;Liverpool Lime Street',
+            'SYB4f65hf75f736463;Stalybridge',
+            'HUD5767ghtyfyr4536dh45dg45dg3;Huddersfield'];
+
+        // Create loop 
+        for (let i = 0; i < stations.length; i++) {
+            let input2 = stations[i];
+            //console.log(input2, '= Onec!');
+
+            let letterCode = input2.slice(0, 3);
+
+            let semiColon = input2.indexOf(';');
+            //console.log(semiColon, '= result!');
+            let numberCode = input2.slice(semiColon);
+            //console.log(numberCode, '= result2!');
+            let readble = numberCode.replace(';', ': ');
+            // console.log(readble, '= result3!');
+            const finalResult = letterCode + '' + readble;
+            //console.log(finalResult, '= result4!');
+
+            listItem2 = document.createElement('li');
+            listItem2.textContent = finalResult;
+
+            list3.appendChild(listItem2);
+        }
+
+
+
+
+
+        // Add your code here
+
+        let sec = document.getElementById('par');
+        console.log(sec);
+        let quoteStart = 'Don\'t ';
+        let quoteEnd = 'judge each day by the harvest you reap ';
+        const finalQuote = quoteStart + quoteEnd;
+
+        // Don't edit the code below here!
+        sec.innerHTML = ' ';
+        let para1 = document.createElement('li');
+        para1.textContent = finalQuote;
+
+        sec.appendChild(para1);
+
+
+        // Other exe
+
+        let quote = 'I do not like green eggs and ham. I do not like them, Sam-I-Am.';
+        let substring = 'green eggs and ham';
+        console.log(quote[quote.length - 1]);
+
+        // Add your code here
+        let quoteLength1 = quote.length;
+        let index = quote.indexOf('green eggs and ham');
+        let wordQuo = quote[quote.length - 31];
+        let revisedQuote = quote.slice(0, 14) + quote.slice(14, 33);
+        console.log(revisedQuote, 'is final!');
+
+        // Don't edit the code below here!
+        let sec1 = document.getElementById('par1');
+        console.log(sec1)
+        sec1.innerHTML = ' ';
+        let para0 = document.createElement('p');
+        para0.textContent = `The quote is ${quoteLength1} //characters long.`;
+        let para2 = document.createElement('p');
+        para2.textContent = revisedQuote;
+
+        sec1.appendChild(para0);
+        sec1.appendChild(para2);
+
+
+        // Another Exercise
+        const sec2 = document.getElementById('par2')
+        console.log(sec2)
+        let quote3 = 'I dO nOT lIke gREen eGgS anD HAM';
+        let allLett = quote3.slice(1);
+
+        let fixQuote = quote3.replace(allLett, allLett.toLowerCase());
+
+        // Create IF Statement check if there equle string!
+        if (fixQuote.indexOf('do not like green eggs and ham') !== -1) {
+
+            // Our string variable
+            let myFav = 'pork and wine';
+
+            let finalQuote2 = fixQuote.replace('green eggs and ham', myFav.toUpperCase());
+
+            // Add your code here
+
+            // Don't edit the code below here!
+
+            sec2.innerHTML = ' ';
+            let para4 = document.createElement('p');
+            para4.textContent = fixQuote;
+            let para5 = document.createElement('p');
+            para5.textContent = finalQuote2;
+
+            sec2.appendChild(para4);
+            sec2.appendChild(para5);
+        };
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

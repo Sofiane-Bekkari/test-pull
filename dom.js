@@ -51,7 +51,7 @@ input.value = 'Hello World!'
 //console.log(groupItemLast);
 //groupItemLast.style.color = 'blue'
 //let groupItemThird = document.querySelector('.list-item:nth-child(3)');
-//groupItemThird.style.color = 'red'
+//groupItemThird.style.color = 'red '
 
 // QUERY SELECTOR ALL // 
 let odd = document.querySelectorAll('li:nth-child(odd)');
@@ -67,7 +67,7 @@ for (let i = 0; i < odd.length; i++) {
 // parentNode
 let itemLists = document.querySelector('#items')
 //console.log(itemLists.parentNode);
-//itemLists.parentNode.parentNode.style.border = 'solid 2px yellow'
+itemLists.parentNode.parentNode.style.border = 'solid 2px yellow'
 
 // parentElement 
 //console.log(itemLists.parentElement);
@@ -213,6 +213,7 @@ function runEvent(e) {
     //document.body.style.backgroundColor = "rgb(" + e.offsetX + ", " + e.offsetY + ", 40)";
     //console.log(output);
 }
+for (let i = 0; i < season.length; i++) { }
 
 // BOM Browser Object Model
 function verBrowser(e) {

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Object</title>
+</head>
+
+<body>
+    <h1>Array Object Exercise</h1>
+    <div class="output">
+        <ul>
+        </ul>
+        <p class="output-p"></p>
+    </div>
+
+    <script>
+
+        //const list = document.querySelector('.output');
+        //const totalBox = document.querySelector('.output-p');
+        //console.log(totalBox)
+        //let total = 0;
+        //list.innerHTML = '';
+        //totalBox.textContent = '';
+        //// number 1
+        let products = ['Underpants:6.99',
+            'Socks:5.99',
+            'T-shirt:14.99',
+            'Trousers:31.99',
+            'Shoes:23.99'];
+
+        //
+        //for (let i = 0; i <= products.length; i++) { // number 2
+        //    // number 3
+        //
+        //    let input = products[i].split(':');
+        //    console.log(input, 'One!');
+        //
+        //    let itemName = input[0];
+        //    console.log(itemName);
+        //
+        //    // number 4
+        //    let priceString = input[1]
+        //    console.log(priceString);
+        //
+        //
+        //    // number 5
+        //    total = priceString;
+        //    console.log(total, 'total!');
+        //    let itemText = itemName + ' -$' + priceString;
+        //    //
+        //    const listItem = document.createElement('li');
+        //    listItem.textContent = itemText;
+        //    list.appendChild(listItem);
+        //}
+        //totalItem(socks, shoes);
+        //console.log(totalItem);
+        //
+        //totalBox.textContent = 'Total: $' + total.toFixed(2);
+
+        const list = document.querySelector('.output ul');
+        const totalBox = document.querySelector('.output p');
+        let total = 0;
+        list.innerHTML = '';
+        totalBox.textContent = '';
+
+        let products = ['Underpants:6.99',
+            'Socks:5.99',
+            'T-shirt:14.99',
+            'Trousers:31.99',
+            'Shoes:23.99'];
+
+        for (let i = 0; i < products.length; i++) {
+            let subArray = products[i].split(':');
+            let name = subArray[0];
+            let price = Number(subArray[1]);
+            total += price;
+            let itemText = name + ' — $' + price;
+
+            let listItem = document.createElement('li');
+            listItem.textContent = itemText;
+            list.appendChild(listItem);
+        }
+
+        totalBox.textContent = 'Total: $' + total.toFixed(2);
+
+
+    </script>
+</body>
+
+</html>

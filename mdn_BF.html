@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Function</title>
+    <style>
+        .msgBox {
+            background: darkcyan;
+            width: 200PX;
+            height: 10vh;
+            position: relative;
+            /* Lines from MDN */
+            padding-left: 82px;
+            background-position: 25px center;
+            background-repeat: no-repeat;
+        }
+
+        #btn-x {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: none;
+            border-radius: 5px;
+            background: red;
+            cursor: pointer;
+        }
+
+        input {
+            font-size: 2em;
+            margin: 10px 1px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <button>Press Me!</button>
+    <br>
+    <label for="text">Enter Number</label><br>
+    <input class="numberInput" type="text">
+    <p></p>
+
+
+    <script>
+        function displayMessage(msgText, msgType) {
+            const body = document.querySelector('body');
+
+            const panel = document.createElement('div');
+            panel.setAttribute('class', 'msgBox');
+            body.appendChild(panel);
+
+            const msg = document.createElement('p');
+            msg.textContent = msgText + msgType;
+            panel.appendChild(msg);
+
+            const closeBtn = document.createElement('button');
+            closeBtn.setAttribute('id', 'btn-x');
+            closeBtn.textContent = 'x';
+            panel.appendChild(closeBtn);
+
+            closeBtn.onclick = function () {
+                panel.parentNode.removeChild(panel);
+            }
+
+            if (msgType === 'warning') {
+                msg.style.backgroundImage = 'url(beach-maldive.jpg)';
+                panel.style.backgroundColor = 'red';
+            } else if (msgType === 'chat') {
+                msg.style.backgroundImage = 'url(icons/github.png)';
+                panel.style.backgroundColor = 'aqua';
+            } else {
+                msg.style.paddingLeft = '20px';
+            }
+        }
+        let btnOn = document.querySelector('button');
+        btnOn.onclick = function () {
+            displayMessage('Woo, this is a different message!', 'chat');
+        };
+
+        // New input RETURN Function
+        const input = document.querySelector('.numberInput');
+        const para = document.querySelector('p');
+
+        function squared(num) {
+            return num * num;
+            para.textContent = num
+        }
+        squared(4);
+        console.log(squared());
+
+        function cubed(num) {
+            return num * num * num;
+        }
+
+        function factorial(num) {
+            let x = num;
+            while (x > 1) {
+                num *= x - 1;
+                x--;
+            }
+            return num;
+        }
+
+        // Event handler
+        input.onchange = function () {
+            const num = input.value;
+            if (isNaN(num)) {
+                para.textContent = 'You need to enter a number!';
+            } else {
+                para.textContent = num + ' squared is ' + squared(num) + '. ' +
+                    num + ' cubed is ' + cubed(num) + '. ' +
+                    num + ' factorial is ' + factorial(num) + '.';
+            }
+        }
+
+    </script>
+</body>
+
+</html>
